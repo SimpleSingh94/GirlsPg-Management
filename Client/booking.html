@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book a bed at Girls PG. Choose your room type, share your preferences and get matched with a compatible roommate.">
+  <title>Book Your Bed | Girls PG</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+
+  <!-- ========== HEADER / NAVBAR ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Girls<span>PG</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#facilities">Facilities</a></li>
+          <li><a href="index.html#vacancy-summary">Room Vacancy</a></li>
+          <li><a href="index.html#roommate-match">Roommate Match</a></li>
+          <li><a href="index.html#rules">Rules</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="booking.html" class="btn btn-primary header-cta">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== PAGE BANNER ========== -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Book Your Bed</h1>
+        <p>Fill in your details and we will confirm your booking after verification.</p>
+      </div>
+    </section>
+
+    <!-- ========== BOOKING FORM ========== -->
+    <section class="booking" id="booking">
+      <div class="container">
+
+        <form id="bookingForm" class="booking-form" novalidate>
+
+          <!-- Personal details -->
+          <fieldset>
+            <legend>Personal Details</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="bName">Full Name</label>
+                <input type="text" id="bName" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="bAge">Age</label>
+                <input type="number" id="bAge" name="age" min="16" max="60" required>
+              </div>
+              <div class="form-group">
+                <label for="bPlace">Home Town / City</label>
+                <input type="text" id="bPlace" name="place" required>
+              </div>
+              <div class="form-group">
+                <label for="bOccupation">Occupation</label>
+                <select id="bOccupation" name="occupation" required>
+                  <option value="">Select</option>
+                  <option value="student">Student</option>
+                  <option value="working">Working Professional</option>
+                  <option value="night-shift">Night Shift Worker</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bPhone">Phone Number</label>
+                <input type="tel" id="bPhone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+              </div>
+              <div class="form-group">
+                <label for="bEmail">Email</label>
+                <input type="email" id="bEmail" name="email" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Verification -->
+          <fieldset>
+            <legend>Verification &amp; Guardian</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="bIdType">ID Proof Type</label>
+                <select id="bIdType" name="idType" required>
+                  <option value="">Select</option>
+                  <option value="aadhaar">Aadhaar</option>
+                  <option value="passport">Passport</option>
+                  <option value="voter">Voter ID</option>
+                  <option value="license">Driving License</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bIdNumber">ID Proof Number</label>
+                <input type="text" id="bIdNumber" name="idNumber" required>
+              </div>
+              <div class="form-group">
+                <label for="bGuardianName">Guardian Name</label>
+                <input type="text" id="bGuardianName" name="guardianName" required>
+              </div>
+              <div class="form-group">
+                <label for="bGuardianPhone">Guardian Phone</label>
+                <input type="tel" id="bGuardianPhone" name="guardianPhone" pattern="[0-9]{10}" placeholder="10-digit number" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Room choice -->
+          <fieldset>
+            <legend>Room Preference</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="bRoomType">Room Type</label>
+                <select id="bRoomType" name="roomType" required>
+                  <option value="">Select</option>
+                  <option value="single">Single Seater</option>
+                  <option value="double">Double Seater</option>
+                  <option value="triple">Triple Seater</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bMoveIn">Preferred Move-in Date</label>
+                <input type="date" id="bMoveIn" name="moveInDate" required>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Roommate matching -->
+          <fieldset id="preferences">
+            <legend>Roommate Preferences (for matching)</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="bMess">Food Preference</label>
+                <select id="bMess" name="mess">
+                  <option value="veg">Vegetarian</option>
+                  <option value="non-veg">Non-Vegetarian</option>
+                  <option value="any">No Preference</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bClean">Cleanliness Level</label>
+                <select id="bClean" name="cleanliness">
+                  <option value="very-neat">Very Neat</option>
+                  <option value="average">Average</option>
+                  <option value="relaxed">Relaxed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bSleep">Sleep Schedule</label>
+                <select id="bSleep" name="sleep">
+                  <option value="early">Early Sleeper</option>
+                  <option value="late">Night Owl</option>
+                  <option value="flexible">Flexible</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bStudy">Study / Work at Room</label>
+                <select id="bStudy" name="studyAtRoom">
+                  <option value="often">Often</option>
+                  <option value="sometimes">Sometimes</option>
+                  <option value="rarely">Rarely</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="form-check">
+            <input type="checkbox" id="bTerms" name="terms" required>
+            <label for="bTerms">I agree to the PG rules, curfew timings and verification process.</label>
+          </div>
+
+          <p class="form-message" id="bookingMessage" role="status"></p>
+
+          <button type="submit" class="btn btn-primary">Submit Booking Request</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a href="index.html" class="logo">Girls<span>PG</span></a>
+        <p>Safe, comfortable living for women.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html#facilities">Facilities</a></li>
+          <li><a href="index.html#vacancy-summary">Room Vacancy</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>+91 00000 00000</p>
+        <p>info@girlspg.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Girls PG. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/booking.js"></script>
+</body>
+</html>

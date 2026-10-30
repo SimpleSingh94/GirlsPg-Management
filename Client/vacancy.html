@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check live room and bed vacancy at Girls PG by room type, floor and date.">
+  <title>Room Vacancy | Girls PG</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/vacancy.css">
+</head>
+<body>
+
+  <!-- ========== MAIN HEADER / NAVBAR ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Girls<span>PG</span></a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+
+      <nav class="main-nav" id="mainNav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="vacancy.html" class="active">Room Vacancy</a></li>
+          <li><a href="index.html#roommate-match">Roommate Match</a></li>
+          <li><a href="index.html#rules">Rules</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="booking.html" class="btn btn-primary header-cta">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== PAGE BANNER ========== -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Room Vacancy</h1>
+        <p>Check which rooms and beds are free, and when the next ones open up.</p>
+      </div>
+    </section>
+
+    <!-- ========== VACANCY SUB-NAVBAR (TABS) ========== -->
+    <div class="vacancy-nav" id="vacancyTabs">
+      <div class="container vacancy-nav-inner">
+        <button class="tab-btn active" data-tab="check">Check Vacancy</button>
+        <button class="tab-btn" data-tab="upcoming">Upcoming Vacancies</button>
+        <button class="tab-btn" data-tab="prediction">AI Prediction</button>
+      </div>
+    </div>
+
+    <!-- ========== OVERALL BED STATS ========== -->
+    <section class="bed-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card"><h3 id="statTotal">--</h3><p>Total Beds</p></div>
+          <div class="stat-card stat-vacant"><h3 id="statVacant">--</h3><p>Vacant</p></div>
+          <div class="stat-card stat-occupied"><h3 id="statOccupied">--</h3><p>Occupied</p></div>
+          <div class="stat-card stat-reserved"><h3 id="statReserved">--</h3><p>Reserved</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TAB 1: CHECK VACANCY ========== -->
+    <section class="tab-panel active" id="tab-check">
+      <div class="container">
+
+        <form class="filter-form" id="filterForm">
+          <div class="form-group">
+            <label for="fType">Room Type</label>
+            <select id="fType">
+              <option value="all">All Types</option>
+              <option value="single">Single Seater</option>
+              <option value="double">Double Seater</option>
+              <option value="triple">Triple Seater</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fFloor">Floor</label>
+            <select id="fFloor">
+              <option value="all">All Floors</option>
+              <option value="1">Floor 1</option>
+              <option value="2">Floor 2</option>
+              <option value="3">Floor 3</option>
+              <option value="4">Floor 4</option>
+              <option value="5">Floor 5</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="fDate">Needed From (optional)</label>
+            <input type="date" id="fDate">
+          </div>
+
+          <div class="form-group form-check-inline">
+            <input type="checkbox" id="fOnlyVacant" checked>
+            <label for="fOnlyVacant">Only rooms with free beds</label>
+          </div>
+
+          <div class="filter-actions">
+            <button type="submit" class="btn btn-primary">Check</button>
+            <button type="button" class="btn btn-outline" id="resetBtn">Reset</button>
+          </div>
+        </form>
+
+        <div class="legend">
+          <span><i class="bed-dot vacant"></i> Vacant</span>
+          <span><i class="bed-dot occupied"></i> Occupied</span>
+          <span><i class="bed-dot reserved"></i> Reserved</span>
+        </div>
+
+        <p class="result-count" id="resultCount" role="status"></p>
+
+        <div class="room-grid" id="roomGrid"></div>
+
+        <div class="section-action">
+          <button class="btn btn-secondary" id="loadMoreBtn">Load More Rooms</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========== TAB 2: UPCOMING VACANCIES ========== -->
+    <section class="tab-panel" id="tab-upcoming">
+      <div class="container">
+        <div class="upcoming-header">
+          <h2 class="section-title">Beds Becoming Available</h2>
+          <div class="form-group upcoming-filter">
+            <label for="upDays">Show beds free within</label>
+            <select id="upDays">
+              <option value="15">15 days</option>
+              <option value="30" selected>30 days</option>
+              <option value="60">60 days</option>
+              <option value="90">90 days</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="vacancy-table">
+            <thead>
+              <tr>
+                <th>Room</th>
+                <th>Floor</th>
+                <th>Type</th>
+                <th>Bed</th>
+                <th>Available From</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="upcomingBody"></tbody>
+          </table>
+        </div>
+        <p class="empty-note" id="upcomingEmpty">No beds becoming available in this period.</p>
+      </div>
+    </section>
+
+    <!-- ========== TAB 3: AI PREDICTION (placeholder for ML) ========== -->
+    <section class="tab-panel" id="tab-prediction">
+      <div class="container">
+        <div class="prediction-card">
+          <h2 class="section-title">AI Vacancy Prediction</h2>
+          <p>Our machine learning model will estimate how many beds are likely to be free in the coming weeks, based on past move-ins and move-outs.</p>
+
+          <div class="form-group prediction-filter">
+            <label for="predDays">Predict for the next</label>
+            <select id="predDays">
+              <option value="7">7 days</option>
+              <option value="15">15 days</option>
+              <option value="30" selected>30 days</option>
+              <option value="60">60 days</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" id="predictBtn">Predict Vacancy</button>
+          <div class="prediction-result" id="predictionResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CALL TO ACTION ========== -->
+    <section class="cta-banner">
+      <div class="container">
+        <h2>Found a Bed You Like?</h2>
+        <p>Send your booking request and we will confirm it after verification.</p>
+        <a href="booking.html" class="btn btn-primary">Book Now</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <a href="index.html" class="logo">Girls<span>PG</span></a>
+        <p>Safe, comfortable living for women.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="vacancy.html">Room Vacancy</a></li>
+          <li><a href="booking.html">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>+91 00000 00000</p>
+        <p>info@girlspg.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Girls PG. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/vacancy.js"></script>
+</body>
+</html>

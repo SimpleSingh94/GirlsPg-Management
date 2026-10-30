@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Safe and comfortable girls' PG with live room vacancy, roommate matching and easy online booking.">
+    <title>Girls PG | Safe & Comfortable Stay</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER / NAVBAR ========== -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">Girls<span>PG</span></a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+
+            <nav class="main-nav" id="mainNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#vacancy">Room Vacancy</a></li>
+                    <li><a href="#roommate-match">Roommate Match</a></li>
+                    <li><a href="#booking">Book Now</a></li>
+                    <li><a href="#rules">Rules</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <a href="booking.html" class="btn btn-primary header-cta">Book Now</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ========== HERO ========== -->
+        <section class="hero" id="home">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <h1>A Safe, Comfortable Home Away From Home</h1>
+                    <p>Fully managed PG for students and working women, with 24x7 security, live room availability and
+                        roommate matching.</p>
+                    <div class="hero-buttons">
+                        <a href="vacancy.html" class="btn btn-primary">Check Vacancy</a>
+                        <a href="booking.html" class="btn btn-outline">Book a Bed</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Replace with your own image -->
+                    <img src="images/hero.webp" alt="Girls PG building and rooms">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== LIVE VACANCY SNAPSHOT ========== -->
+        <section class="vacancy-summary" id="vacancy-summary">
+            <div class="container">
+                <h2 class="section-title">Live Room Availability</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 id="singleVacant">--</h3>
+                        <p>Single Rooms Vacant</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="doubleVacant">--</h3>
+                        <p>Double Beds Vacant</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="tripleVacant">--</h3>
+                        <p>Triple Beds Vacant</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="nextAvailable">--</h3>
+                        <p>Days to Next Availability</p>
+                    </div>
+                </div>
+                <div class="section-action">
+                    <a href="vacancy.html" class="btn btn-secondary">View Full Vacancy Status</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ROOM TYPES ========== -->
+        <section class="room-types" id="rooms">
+            <div class="container">
+                <h2 class="section-title">Choose Your Room</h2>
+                <div class="card-grid">
+                    <article class="card room-card">
+                        <img src="images/single.jpg" alt="Single seater room">
+                        <div class="card-body">
+                            <h3>Single Seater</h3>
+                            <p>Complete privacy with your own space.</p>
+                            <a href="booking.html?type=single" class="btn btn-secondary">Book</a>
+                        </div>
+                    </article>
+                    <article class="card room-card">
+                        <img src="images/double.jpg" alt="Double seater room">
+                        <div class="card-body">
+                            <h3>Double Seater</h3>
+                            <p>Share with one roommate at a balanced price.</p>
+                            <a href="booking.html?type=double" class="btn btn-secondary">Book</a>
+                        </div>
+                    </article>
+                    <article class="card room-card">
+                        <img src="images/triple.jpg" alt="Triple seater room">
+                        <div class="card-body">
+                            <h3>Triple Seater</h3>
+                            <p>The most economical option with two roommates.</p>
+                            <a href="booking.html?type=triple" class="btn btn-secondary">Book</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== FACILITIES PREVIEW ========== -->
+        <section class="facilities-preview" id="facilities">
+            <div class="container">
+                <h2 class="section-title">Our Facilities</h2>
+                <div class="feature-grid">
+                    <div class="feature-item"><span class="icon">&#128246;</span>
+                        <h4>High-Speed Wi-Fi</h4>
+                    </div>
+                    <div class="feature-item"><span class="icon">&#127869;</span>
+                        <h4>Mess &amp; Meals</h4>
+                    </div>
+                    <div class="feature-item"><span class="icon">&#128737;</span>
+                        <h4>24x7 Security</h4>
+                    </div>
+                    <div class="feature-item"><span class="icon">&#129530;</span>
+                        <h4>Laundry</h4>
+                    </div>
+                    <div class="feature-item"><span class="icon">&#128161;</span>
+                        <h4>Power Backup</h4>
+                    </div>
+                    <div class="feature-item"><span class="icon">&#129529;</span>
+                        <h4>Daily Housekeeping</h4>
+                    </div>
+                </div>
+                <div class="section-action">
+                    <a href="facilities.html" class="btn btn-secondary">See All Facilities</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== ROOMMATE MATCHING ========== -->
+        <section class="roommate-match" id="roommate-match">
+            <div class="container two-column">
+                <div class="column-text">
+                    <h2 class="section-title">Find a Roommate You'll Get Along With</h2>
+                    <p>Tell us your habits and we match you with compatible roommates.</p>
+                    <ul class="check-list">
+                        <li>Mess and food preferences</li>
+                        <li>Cleanliness habits</li>
+                        <li>Sleep and study schedule</li>
+                        <li>Student or working professional</li>
+                    </ul>
+                    <a href="booking.html#preferences" class="btn btn-primary">Find My Match</a>
+                </div>
+                <div class="column-image">
+                    <img src="images/roommates.jpg" alt="Two roommates in a room">
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== HOW IT WORKS ========== -->
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How Booking Works</h2>
+                <ol class="steps">
+                    <li class="step"><span class="step-number">1</span>
+                        <h4>Check Vacancy</h4>
+                        <p>See live availability.</p>
+                    </li>
+                    <li class="step"><span class="step-number">2</span>
+                        <h4>Choose Room</h4>
+                        <p>Pick single, double or triple.</p>
+                    </li>
+                    <li class="step"><span class="step-number">3</span>
+                        <h4>Submit Details</h4>
+                        <p>Fill in the booking form.</p>
+                    </li>
+                    <li class="step"><span class="step-number">4</span>
+                        <h4>Move In</h4>
+                        <p>Confirm and get your bed.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ========== RULES & SAFETY ========== -->
+        <section class="rules" id="rules">
+            <div class="container">
+                <h2 class="section-title">Rules &amp; Safety</h2>
+                <div class="card-grid">
+                    <div class="card rule-card">
+                        <h3>Entry Timings</h3>
+                        <p>Students and other residents follow a curfew. Night-shift workers get approved late entry and
+                            exit.</p>
+                    </div>
+                    <div class="card rule-card">
+                        <h3>Visitor Policy</h3>
+                        <p>All visitors are logged at the gate during permitted hours.</p>
+                    </div>
+                    <div class="card rule-card">
+                        <h3>Verified Residents</h3>
+                        <p>ID proof is mandatory for every resident. Former residents who left are not re-admitted.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== TESTIMONIALS ========== -->
+        <section class="testimonials" id="testimonials">
+            <div class="container">
+                <h2 class="section-title">What Our Residents Say</h2>
+                <div class="card-grid">
+                    <blockquote class="card testimonial">
+                        <p>"Feels safe and homely."</p>
+                        <footer>Resident Name, Student</footer>
+                    </blockquote>
+                    <blockquote class="card testimonial">
+                        <p>"Booking was quick and easy."</p>
+                        <footer>Resident Name, Working Professional</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CALL TO ACTION ========== -->
+        <section class="cta-banner">
+            <div class="container">
+                <h2>Ready to Move In?</h2>
+                <p>Beds fill up fast. Reserve yours today.</p>
+                <a href="booking.html" class="btn btn-primary">Book Your Bed</a>
+            </div>
+        </section>
+
+        <!-- ========== CONTACT ========== -->
+        <section class="contact" id="contact">
+            <div class="container two-column">
+                <div class="column-text">
+                    <h2 class="section-title">Contact Us</h2>
+                    <address>
+                        <p><strong>Address:</strong> Your PG address here</p>
+                        <p><strong>Phone:</strong> <a href="tel:+910000000000">+91 00000 00000</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@girlspg.com">info@girlspg.com</a></p>
+                    </address>
+                </div>
+                <div class="column-form">
+                    <form id="contactForm" class="contact-form">
+                        <label for="cName">Name</label>
+                        <input type="text" id="cName" name="name" required>
+
+                        <label for="cPhone">Phone</label>
+                        <input type="tel" id="cPhone" name="phone" required>
+
+                        <label for="cMessage">Message</label>
+                        <textarea id="cMessage" name="message" rows="4" required></textarea>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-col">
+                <a href="index.html" class="logo">Girls<span>PG</span></a>
+                <p>Safe, comfortable living for women.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="vacancy.html">Room Vacancy</a></li>
+                    <li><a href="booking.html">Book Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>+91 00000 00000</p>
+                <p>info@girlspg.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Girls PG. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

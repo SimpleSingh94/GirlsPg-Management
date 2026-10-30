@@ -1,0 +1,349 @@
+/* ========== vacancy.css (works together with index.css) ========== */
+
+:root {
+  --vacant: #2b8a3e;
+  --occupied: #868e96;
+  --reserved: #f59f00;
+}
+
+/* Page banner */
+.page-banner {
+  background: linear-gradient(135deg, var(--soft), #e5dbff);
+  text-align: center;
+  padding: 60px 0 50px;
+}
+
+.page-banner h1 {
+  font-size: 2.4rem;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.page-banner p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Vacancy sub-navbar (tabs) ===== */
+.vacancy-nav {
+  position: sticky;
+  top: 66px; /* sits just under the main header */
+  z-index: 50;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.vacancy-nav-inner {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 14px 24px;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tab-btn:hover {
+  color: var(--primary);
+}
+
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* ===== Stats ===== */
+.bed-stats {
+  padding: 40px 0 10px;
+}
+
+.stat-vacant h3 { color: var(--vacant); }
+.stat-occupied h3 { color: var(--occupied); }
+.stat-reserved h3 { color: var(--reserved); }
+
+/* ===== Tab panels ===== */
+.tab-panel {
+  display: none;
+  padding: 40px 0 60px;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+/* ===== Filter form ===== */
+.filter-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px 20px;
+  align-items: end;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.form-group input[type="date"],
+.form-group select {
+  padding: 11px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(214, 51, 108, 0.15);
+}
+
+.form-check-inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-check-inline label {
+  margin: 0;
+}
+
+.filter-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ===== Legend & count ===== */
+.legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.result-count {
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 18px;
+}
+
+/* ===== Bed dots ===== */
+.bed-dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.bed-dot.vacant { background: var(--vacant); }
+.bed-dot.occupied { background: var(--occupied); }
+.bed-dot.reserved { background: var(--reserved); }
+
+/* ===== Room cards ===== */
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+.room-tile {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  transition: transform 0.25s ease;
+}
+
+.room-tile:hover {
+  transform: translateY(-4px);
+}
+
+.room-tile-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.room-tile h3 {
+  color: var(--dark);
+  font-size: 1.2rem;
+}
+
+.room-tag {
+  background: var(--soft);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.room-meta {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.bed-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.free-count {
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.free-count.has-free { color: var(--vacant); }
+.free-count.no-free { color: var(--occupied); }
+
+.room-tile .btn {
+  width: 100%;
+  text-align: center;
+  padding: 9px;
+}
+
+.btn.disabled {
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+/* ===== Upcoming table ===== */
+.upcoming-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.upcoming-header .section-title {
+  margin: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.vacancy-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.vacancy-table th,
+.vacancy-table td {
+  padding: 13px 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.vacancy-table thead {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.vacancy-table tbody tr:nth-child(even) {
+  background: var(--light);
+}
+
+.vacancy-table td .btn {
+  padding: 6px 16px;
+  font-size: 0.85rem;
+}
+
+.empty-note {
+  text-align: center;
+  margin-top: 24px;
+  display: none;
+}
+
+/* ===== Prediction ===== */
+.prediction-card {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--soft);
+  border-radius: var(--radius);
+  padding: 34px;
+  text-align: center;
+}
+
+.prediction-card p {
+  margin-bottom: 20px;
+}
+
+.prediction-filter {
+  max-width: 220px;
+  margin: 0 auto 18px;
+  text-align: left;
+}
+
+.prediction-result {
+  margin-top: 22px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .filter-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .vacancy-nav {
+    top: 58px;
+  }
+
+  .tab-btn {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+
+  .filter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .page-banner h1 {
+    font-size: 1.9rem;
+  }
+
+  .prediction-card {
+    padding: 24px 16px;
+  }
+}
